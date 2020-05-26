@@ -1,0 +1,25 @@
+body{
+  font-family: Sans-serif;
+}
+.counter{
+  display:flex;
+  justify-content:space-around;
+  font-size: 60px;
+  text-align: center;
+  text-transform:uppercase;
+  color:#1C4F39
+ 
+}
+.placeholder{
+  background-color:#F7C6C6;
+  width:100%;
+  height: 50vh;
+  border: 1px solid #fff;
+  font-size: 50px;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+text-transform:uppercase;
+color:#a55;
+}
