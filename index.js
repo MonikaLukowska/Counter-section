@@ -3,6 +3,7 @@ class Counter {
     this.blocks = [...document.querySelectorAll('.counter__no')];
     this.counterSection = document.querySelector('.counter');
     this.event()
+
   }
 
   event() {
@@ -18,29 +19,26 @@ class Counter {
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
-  counting() {
-    const that = this;
+  counting = () => {
     if (this.isInAview()) {
-      for (let i = 0; i < that.blocks.length; i++) {
-        function updateNumber() {
-          let number = +that.blocks[i].textContent;
-          const target = +that.blocks[i].getAttribute('data-target');
-          console.log(number, target)
+      for (let i = 0; i < this.blocks.length; i++) {
+        const updateNumber = () => {
+          let number = +this.blocks[i].textContent;
+          const target = +this.blocks[i].getAttribute('data-target');
           if (number < target) {
             number++
-            that.blocks[i].innerText = number;
-            console.log(that.blocks[i].innerText)
+            this.blocks[i].innerText = number;
             setTimeout(updateNumber, 10)
           } else {
-            that.blocks[i].innerText = target
+            this.blocks[i].innerText = target
           }
         }
         updateNumber()
       }
     } else {
-      for (let i = 0; i < that.blocks.length; i++) {
-        function resetNumber() {
-          that.blocks[i].innerText = 0;
+      for (let i = 0; i < this.blocks.length; i++) {
+        const resetNumber = () => {
+          this.blocks[i].innerText = 0;
         }
         resetNumber()
       }
